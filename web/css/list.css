@@ -1,0 +1,25 @@
+.page-header blockquote {
+    border-left: none;
+}
+h4.cat {
+    color: #a00;
+}
+blockquote.desc {
+    font-style: italic;
+    margin: 20px 0;
+}
+ul.unstyled {
+    margin-bottom: 30px;
+}
+ul.unstyled li {
+    margin-bottom: 10px;
+}
+span.label {
+    margin-left: 10px;
+}
+span.info {
+    color: #ccc;
+}
+.right {
+    text-align: right;
+}
