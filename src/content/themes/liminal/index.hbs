@@ -1,0 +1,19 @@
+{{!< default}}
+
+{{>main-header}}
+
+<div id="blog-container">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-9 small-12 cell">
+        <main class="content post-list" id="content">
+          {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+          {{> "loop"}}
+        </main>
+      </div>
+      <div class="large-3 hide-for-small-only cell main-sidebar">
+        {{> "main-sidebar"}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 100;
+   color: #343838;
+}
+a, a:visited {
+    color: #005F6B;
+}
+a:hover {
+    color: #008C9E;
+    text-decoration: none;
+}
+#header {
+    padding: 20px 0 10px 0;
+}

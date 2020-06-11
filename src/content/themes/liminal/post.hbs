@@ -1,0 +1,60 @@
+{{!< default}}
+
+{{#post}}
+
+{{>main-header}}
+
+<div id="blog-container" class="grid-container" data-sticky-container>
+  <div class="grid-x grid-padding-x">
+    <div class="large-8 small-12 cell content-show">
+      <main class="container content" id="content">
+        <article class="post {{post_class}} js-toc-content">
+            <header class="post__header">
+              <div class="post__meta">
+                <h1>{{title}}</h1>
+                <time class="post__date" datetime="{{date format='YYYY-MM-DD'}}">
+                  <h3 id="published-at" class="js-toc-ignore non-heading">{{date format="MMMM Do, YYYY"}}</h3>
+                </time>
+              </div>
+            </header>
+
+            <section class="post__content">
+              {{content}}
+            </section>
+        </article>
+      </main>
+    </div>
+    <div class="large-1 cell" style="background-color: #fff"></div>
+    <div class="auto hide-for-small-only cell content-sidebar" data-sticky-container>
+      <div id="toc" data-sticky data-margin-top="80">
+        {{> content-sidebar}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/post}}
+
+<script type="text/javascript">
+var sticky = new Sticky('[data-sticky]');
+tocbot.init({
+  // Where to render the table of contents.
+  tocSelector: '.js-toc',
+  // Where to grab the headings to build the table of contents.
+  contentSelector: '.js-toc-content',
+  // Which headings to grab inside of the contentSelector element.
+  headingSelector: 'h2, h3',
+  // For headings inside relative or absolute positioned containers within content.
+  hasInnerContainers: true,
+  orderedList: false,
+  collapseDepth: 6,
+  ignoreSelector: '.js-toc-ignore'
+});
+hljs.initHighlightingOnLoad();
+var linkList = document.querySelectorAll('#content a');
+
+for(var i in linkList){
+ linkList[i].setAttribute('target', '_blank');
+ linkList[i].setAttribute('rel', 'noreferrer noopener');
+}
+</script>
