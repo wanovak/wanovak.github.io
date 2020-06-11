@@ -1,0 +1,30 @@
+<article class="post-teaser {{post_class}} container">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-3 hide-for-small-only cell post-teaser-image">
+        <a href="{{url}}">
+          <img src="{{img_url feature_image size="m"}}" />
+        </a>
+      </div>
+      <div class="large-9 small-12 cell post-teaser-title-contain">
+        <div class="post-teaser__text-container">
+          <header class="post-teaser__header">
+            <h1 class="post-teaser__title">
+              <a href="{{url}}">{{title}}</a>
+            </h1>
+          </header>
+        </div>
+        <div class="post-teaser-excerpt">
+          <p>
+            {{excerpt words="100"}}
+            <span class="read-more">…
+              <a class="read-more__link" href="{{url}}">
+                <span>read&nbsp;more&nbsp;&raquo;</span>
+              </a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,12 @@
+<h3>Categories</h3>
+{{#get "tags" include="count.posts" order="count.posts asc"}}
+  <ul id="tags">
+    {{#foreach tags}}
+      {{#if count.posts}}
+        <li>
+          <a href="{{url}}" class="badge badge-pill badge-primary">{{name}}<!--({{plural count.posts empty='No posts' singular='% post' plural='% posts'}})--></a>
+        </li>
+      {{/if}}
+    {{/foreach}}
+  <ul>
+{{/get}}

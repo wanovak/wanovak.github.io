@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Free Blog Hosting with Ghost + GitHub Pages — wanovak.com</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=78ba6a139e" />
+
+  <script src="/assets/js/vendor.js?v=78ba6a139e"></script>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://wanovak.com/localhost-nginx-letsencrypt-ghost-docker-foundation/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://wanovak.com/localhost-nginx-letsencrypt-ghost-docker-foundation/amp/" />
+    
+    <meta property="og:site_name" content="wanovak.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Free Blog Hosting with Ghost + GitHub Pages" />
+    <meta property="og:description" content="But Why? Simplicity. Ghost is open source, light-weight, ships with a no-frills WYSIWYG editor, and is dead simple to write themes for. Sounds great, right? One problem: by its very nature Ghost is dynamic, which means hosting it isn&#x27;t going to be free. Be it a monthly subscription to a" />
+    <meta property="og:url" content="https://wanovak.com/localhost-nginx-letsencrypt-ghost-docker-foundation/" />
+    <meta property="og:image" content="https://wanovak.com/content/images/2020/05/github_ghost.png" />
+    <meta property="article:published_time" content="2020-06-11T01:56:00.000Z" />
+    <meta property="article:modified_time" content="2020-06-11T06:07:42.000Z" />
+    <meta property="article:tag" content="Ghost" />
+    <meta property="article:tag" content="Gulp" />
+    <meta property="article:tag" content="CloudFlare" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free Blog Hosting with Ghost + GitHub Pages" />
+    <meta name="twitter:description" content="But Why? Simplicity. Ghost is open source, light-weight, ships with a no-frills WYSIWYG editor, and is dead simple to write themes for. Sounds great, right? One problem: by its very nature Ghost is dynamic, which means hosting it isn&#x27;t going to be free. Be it a monthly subscription to a" />
+    <meta name="twitter:url" content="https://wanovak.com/localhost-nginx-letsencrypt-ghost-docker-foundation/" />
+    <meta name="twitter:image" content="https://wanovak.com/content/images/2020/05/github_ghost.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Will Novak" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Ghost, Gulp, CloudFlare" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta property="og:image:width" content="351" />
+    <meta property="og:image:height" content="265" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "wanovak.com",
+        "url": "https://wanovak.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://wanovak.com/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Will Novak",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/23e76a5848956d022333122da36e03a6?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://wanovak.com/author/will/",
+        "sameAs": []
+    },
+    "headline": "Free Blog Hosting with Ghost + GitHub Pages",
+    "url": "https://wanovak.com/localhost-nginx-letsencrypt-ghost-docker-foundation/",
+    "datePublished": "2020-06-11T01:56:00.000Z",
+    "dateModified": "2020-06-11T06:07:42.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://wanovak.com/content/images/2020/05/github_ghost.png",
+        "width": 351,
+        "height": 265
+    },
+    "keywords": "Ghost, Gulp, CloudFlare",
+    "description": "But Why?\nSimplicity.\n\nGhost is open source, light-weight, ships with a no-frills WYSIWYG editor, and\nis dead simple to write themes for.\n\nSounds great, right? One problem: by its very nature Ghost is dynamic, which\nmeans hosting it isn&#x27;t going to be free. Be it a monthly subscription to a\nmanaged service via Ghost.org [https://ghost.org], or a Ghost instance deployed\nto a cloud provider like DigitalOcean [https://m.do.co/c/69cd24bc95d6], there is \ngoing to be some associated cost.\n\nThere are som",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wanovak.com/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.13" />
+    <link rel="alternate" type="application/rss+xml" title="wanovak.com" href="https://wanovak.com/rss/" />
+</head>
+<body class="post-template tag-ghost-tag tag-gulp tag-cloudflare" id="body">
+
+  
+
+<header class="main-header" id="main-header" style="position: fixed; width: 100%;">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-8 small-12 cell">
+        <a href="https://wanovak.com"><svg width="60" height="50" xmlns="http://www.w3.org/2000/svg" class="logo">
+  <title>William Andrew Novak</title>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="w_1" y2="37.5" x2="7.5" y1="22.5" x1="0" stroke-width="2" class="logo-primary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="w_2" y2="22.5" x2="15" y1="37.5" x1="7.5" stroke-width="2" class="logo-primary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="w_3" y2="37.5" x2="22.5" y1="22.5" x1="15" stroke-width="2" class="logo-primary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="wa" y2="22.5" x2="30" y1="37.5" x1="22.5" stroke-width="2" class="logo-secondary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="a_1" y2="37.5" x2="37.5" y1="22.5" x1="30" stroke-width="2" class="logo-secondary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="a_x" y2="22.5" x2="45" y1="37.5" x1="22.5" stroke-width="2" class="logo-secondary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="n_1" y2="37.5" x2="37.5" y1="22.5" x1="45" stroke-width="2" class="logo-primary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="n_2" y2="37.5" x2="52.5" y1="22.5" x1="45" stroke-width="2" class="logo-primary" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="n_3" y2="22.5" x2="60" y1="37.5" x1="52.5" stroke-width="2" class="logo-primary" fill="none"/>
+ </g>
+</svg>
+</a>
+      </div>
+      <div class="auto hide-for-small-only cell">
+        <nav class="menu">
+  <ul>
+    <li>
+      <a href="https://github.com/wanovak" target="_blank" rel="noreferrer noopener">
+        <i class="fab fa-github fa-md"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://stackoverflow.com/users/424422/wanovak" target="_blank" rel="noreferrer noopener">
+        <i class="fab fa-stack-overflow fa-md"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://linkedin.com/in/wanovak" target="_blank" rel="noreferrer noopener">
+        <i class="fab fa-linkedin fa-md"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="blog-container" class="grid-container" data-sticky-container>
+  <div class="grid-x grid-padding-x">
+    <div class="large-8 small-12 cell content-show">
+      <main class="container content" id="content">
+        <article class="post post tag-ghost-tag tag-gulp tag-cloudflare js-toc-content">
+            <header class="post__header">
+              <div class="post__meta">
+                <h1>Free Blog Hosting with Ghost + GitHub Pages</h1>
+                <time class="post__date" datetime="2020-06-10">
+                  <h3 id="published-at" class="js-toc-ignore non-heading">June 10th, 2020</h3>
+                </time>
+              </div>
+            </header>
+
+            <section class="post__content">
+              <!--kg-card-begin: markdown--><h2 id="butwhy">But Why?</h2>
+<!--kg-card-end: markdown--><p>Simplicity.</p><p>Ghost is open source, light-weight, ships with a no-frills WYSIWYG editor, and is dead simple to write themes for.</p><p>Sounds great, right? One problem: by its very nature Ghost is dynamic, which means hosting it isn't going to be free. Be it a monthly subscription to a managed service via <a href="https://ghost.org">Ghost.org</a>, or a Ghost instance deployed to a cloud provider like <a href="https://m.do.co/c/69cd24bc95d6">DigitalOcean</a>, there <em>is</em> going to be some associated cost.</p><!--kg-card-begin: html--><div class="callout primary"><!--kg-card-end: html--><p>There <em>are</em> some static blog engines, like <a href="https://hexo.io">Hexo</a>, but they typically require the use of static files and markdown– not my preferred modus operandi for leisurely writing.</p><!--kg-card-begin: html--></div><!--kg-card-end: html--><p>But why does there need to be? Short answer: there doesn't. Let's go over how I managed to get a Ghost blog up and running for free, and with very little work.</p><h2 id="goal">Goal</h2><p>To create a static blog with all the modern conveniences of a dynamic blog engine which can be cloned and contributed to from any computer that has Git, NPM, wget, and an internet connection.</p><h2 id="the-tools">The Tools</h2><ul><li>NameCheap</li><li>CloudFlare DDNS</li><li>GitHub Pages</li><li>Ghost</li><li>Gulp + GSSG</li><li>Dropbox</li></ul><h2 id="general-set-up">General Set-Up</h2><ol><li>Create a GitHub repository with the name: <code>{GITHUB_USERNAME}.github.io</code></li><li>Create a CloudFront account.</li></ol><h2 id="dns-configuration">DNS Configuration</h2><h3 id="domain-registrar">Domain Registrar</h3><p>This step is completely optional. I prefer to use CloudFlare's DNS over my domain registrar's (NameCheap). If you'd like to leave CloudFlare out of the mix, simply copy the configuration settings from the next section into the corresponding DNS configuration fields within your registrar's portal.</p><ul><li>Log in to CloudFlare, and click the DNS tab.</li><li>Record the nameservers under the section <strong>Cloudflare nameservers</strong>. They should be in a format similar to:</li></ul><!--kg-card-begin: html--><table class="table list-table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>NS</th>
+            <td>foo.ns.cloudflare.com</td>
+        </tr>
+        <tr>
+            <th>NS</th>
+            <td>bar.ns.cloudflare.com</td>
+        </tr>
+    </tbody>
+</table><!--kg-card-end: html--><ul><li>Log in to your registrar's portal to the DNS settings, and adjust the nameservers to be those which were copied in the previous step. NameCheap's configuration looks like so:</li></ul><!--kg-card-begin: html--><div class="list-image"><!--kg-card-end: html--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://wanovak.com/content/images/2020/05/image-3.png" class="kg-image"><figcaption>Custom DNS Nameserver Configuration</figcaption></figure><!--kg-card-begin: html--></div><!--kg-card-end: html--><h3 id="cloudflare">Cloudflare</h3><ul><li>Log in to CloudFlare, and click the DNS tab.</li><li>Create the following records</li></ul><!--kg-card-begin: html--><table class="comparison-table list-table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>IPv4 address</th>
+            <th>TTL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A</td>
+            <td>{YOUR_DOMAIN.COM}</td>
+            <td>192.30.252.154</td>
+            <td>Auto</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>{YOUR_DOMAIN.COM}</td>
+            <td>192.30.252.153</td>
+            <td>Auto</td>
+        </tr>
+        <tr>
+            <td>CNAME</td>
+            <td>www</td>
+            <td>{GITHUB_USERNAME}.github.io</td>
+            <td>Auto</td>
+        </tr>
+    </tbody>
+</table><!--kg-card-end: html--><p>This sets up CloudFlare to point to GitHub's servers, and for your <code>www.{YOUR_DOMAIN.COM}</code> to resolve properly. Those IPs are not magic, but rather came from <a href="https://api.github.com/meta">GitHub's Meta endpoint</a>. </p><h3 id="github-pages">GitHub Pages</h3><ul><li>Log in to GitHub and navigate to your <code>{GITHUB_USERNAME}.github.io</code> repository's settings page.</li><li>Under <strong>GitHub Pages &gt; Custom Domain</strong> enter <code>{YOUR_DOMAIN.COM}</code> and click <strong>Save</strong>.</li><li>Navigate back to the <strong>Code</strong> tab. From here we need to create a file at the root of the repository called <code>CNAME</code> with the contents <code>{YOUR_DOMAIN.COM}</code> on one line. Follow the <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">Cloning a Repository</a> guide if you need help with this.</li><li>Your DNS is now fully configured. If you added an <code>index.html</code> file with the contents <code>Hello World</code> and navigated to <code>{YOUR_DOMAIN.COM}</code> in a browser, you would see your greeting.</li></ul><h2 id="ghost">Ghost</h2><p>Note: You'll need a compatible version of <code>nodejs</code> in order to install and use Ghost. At the time of writing, I'm using <code>v10.13.0</code>. There are plenty of ways to install <code>nodejs</code> that are all dependent on your OS, so instead of relaying them here I'll suggest searching Google for "installing node {MY_OS}".</p><p>Another Note: Since I am using a static generation of my blog for deployment to production, I suffice to use <code>ghost-local</code>, which while being convenient, is not production-grade. If you plan to deploy in a different, more conventional manner, I suggest following a <a href="https://ghost.org/docs/install/ubuntu/">different guide</a>, or using a <a href="https://ghost.org/docs/install/docker/">Docker image</a>.</p><p>I installed using <a href="https://ghost.org/docs/install/local/">this guide</a> from the official Ghost documentation, which I will abbreviate here:</p><pre><code class="language-bash"># Install ghost-cli globally
+$ npm install ghost-cli@latest -g
+
+# Navigate to the location you cloned your repository, and create
+# a directory called `src`. Then navigate into it
+$ cd {GITHUB_USERNAME}.github.io &amp;&amp; mkdir src &amp;&amp; cd src
+
+# Install ghost-local
+$ ghost install local
+
+# Start Ghost
+$ ghost start</code></pre><p>You can now navigate to the following URLs:</p><ul><li><a href="https://wanovak.com/">https://wanovak.com</a> which is your <strong>blog homepage</strong></li><li><a href="https://wanovak.com/ghost">https://wanovak.com/ghost</a> which is the <strong>administration panel</strong></li></ul><p>Follow the prompts at the administration panel URL to configure your new blog. From here you'll likely want to tinker with your theme, write an introductory blog post, etc. Once you're happy and are ready to publish to the internet, continue to the next steps.</p><h2 id="gulp">Gulp</h2><p>We'll be using Gulp and additional tooling to build the static representation of our blog. I also used Gulp to compile my SCSS to CSS, install JavaScript dependencies, and live-reload changes to both– but for now let's focus on the bare bones. First, installing Gulp itself.</p><pre><code class="language-bash"># Navigate to your themes directory; casper is the default theme
+$ cd content/themes/casper
+
+# Install gulp and save it to the package.json. We do this so when we
+# clone our repository later, say onto a different machine, we don't
+# have to go through and re-install node dependencies
+$ npm install --save-dev gulp</code></pre><p>You should now be able to execute <code>gulp --help</code> and not see an errant response.</p><p>Next we'll install the <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">ghost-static-site-generator</a></p><pre><code class="language-bash"># The static site generator depends on wget. If using Mac OS, you can
+# install that using Homebrew.
+$ brew install wget
+
+# Now install the generator
+$ npm install --save-dev ghost-static-site-generator</code></pre><p>Finally, create a file called <code>gulpfile.js</code></p><pre><code class="language-bash">$ touch gulpfile.js</code></pre><p>and paste the following contents into it:</p><pre><code class="language-javascript">'use strict';
+
+const gulp = require('gulp');
+const run = require('gulp-run-command').default;
+
+# This is the task definition that will run the static site generator
+# tool using an easy-to-remember command: `gulp build`
+gulp.task('build', run('gssg --url https://{YOUR_DOMAIN.COM} --dest ../../../../'));</code></pre><h2 id="github-push-preparation">GitHub Push Preparation</h2><h3 id="sensible-gitignore">Sensible .gitignore</h3><p>When you commit all of this to GitHub, you aren't going to want to push up your entire <code>node_modules</code> directory, nor your local database file(s). To tell <code>git</code> to ignore these folders, navigate to the root of your cloned repo and do the following: </p><pre><code class="language-bash">$ touch .gitignore</code></pre><p>and paste the following contents into it:</p><pre><code class="language-text">logs/
+data/
+node_modules/</code></pre><h3 id="make-your-database-portable">Make Your Database Portable</h3><p>This won't be relevant unless you're using <code>ghost-local</code> as other types of Ghost installations utilize other databases, but if you're following this guide exactly you will have an SQLite database file that you won't want being committed to your public GitHub repository.</p><p>Download, install, and sign up for a cloud storage account such as <a href="https://db.tt/mam4tKFF">Dropbox</a>, and move your <code>content/data/ghost-local.db</code> file to a location in your Dropbox folder. Note this location– I'll be referring to it as <code>{DROPBOX_DB_LOC}</code></p><p>Modify <code>config.development.json</code> and change the database connection filename to reference this new location. The line will look as follows:</p><pre><code class="language-json">"database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "{DROPBOX_DB_LOC}"
+    }
+  },</code></pre><p>By following this step you will allow yourself to be able to author blog posts from any computer; not just the one you're initially following these steps on.</p><h3 id="generate-static-representation">Generate Static Representation</h3><p>Run the following command from the <code>content/themes/casper</code> directory to generate your static blog representation.</p><pre><code class="language-bash">$ gulp build</code></pre><h2 id="publish">Publish</h2><p>Navigate to the root of your cloned repository.</p><pre><code class="language-bash">$ cd ../../../../</code></pre><p>Commit and push</p><pre><code class="language-bash">$ git commit -am "initial import of blog"
+$ git push origin head</code></pre><p>Your blog is now live at <code>{YOUR_DOMAIN.COM}</code>. Enjoy!</p><h2 id="continued-blogging">Continued Blogging</h2><p>Creating a new blog post or updating an existing one is simple. Start Ghost if it hasn't been started already, write what you need to write, and from within the theme directory run the same build command as before, commit and push. That's a total of four commands each time you need to update– not a bad trade-off for saving a minimum of $5/mo on hosting a dynamic blog.</p><p>These steps are described below:</p><pre><code class="language-bash"># Navigate to your src/ directory within your cloned repository
+cd src
+
+# Start ghost
+ghost start</code></pre><p>Now you can navigate to <a href="https://wanovak.com/ghost">https://wanovak.com/ghost</a> and do your blogging. When you're satisfied and you're ready to publish, do the following:</p><pre><code class="language-bash"># Navigate to your themes directory
+cd content/themes/casper
+
+# Build
+gulp build
+
+# Navigate back to your repository root
+cd ../../../../
+
+# Commit and push
+git commit -am "new blog post"
+git push origin head</code></pre><h3 id="blogging-from-a-different-computer">Blogging From a Different Computer</h3><p>If you need to use a different computer to write a blog post, simply clone your repository, install <code>nodejs</code>, <code>ghost-cli</code>, update your node dependencies, download your database file from Dropbox (verifying your <code>config.development.json</code> file points to the correct location), and follow the steps above.</p><p>This may seem like a lot but it's really very simple.</p><ol><li><a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">Clone your repository</a>, then navigate to the <code>src/</code> directory</li><li>Google for "installing node {MY_OS}" and install <code>nodejs</code></li><li><code>npm install ghost-cli@latest -g</code></li><li>Download your database file from Dropbox, noting the <code>{DROPBOX_DB_LOC}</code></li><li>Ensure your <code>config.development.json</code> file points to <code>{DROPBOX_DB_LOC}</code></li><li><code>ghost start</code></li><li>Author your blog post</li><li>Update your node dependencies: <code>cd content/themes/casper &amp;&amp; npm install</code></li><li><code>gulp build</code></li><li><code>cd ../../../../</code></li><li><code>git commit -am "new blog post" &amp;&amp; git push origin head</code></li></ol>
+            </section>
+        </article>
+      </main>
+    </div>
+    <div class="large-1 cell" style="background-color: #fff"></div>
+    <div class="auto hide-for-small-only cell content-sidebar" data-sticky-container>
+      <div id="toc" data-sticky data-margin-top="80">
+        <div class="js-toc"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var sticky = new Sticky('[data-sticky]');
+tocbot.init({
+  // Where to render the table of contents.
+  tocSelector: '.js-toc',
+  // Where to grab the headings to build the table of contents.
+  contentSelector: '.js-toc-content',
+  // Which headings to grab inside of the contentSelector element.
+  headingSelector: 'h2, h3',
+  // For headings inside relative or absolute positioned containers within content.
+  hasInnerContainers: true,
+  orderedList: false,
+  collapseDepth: 6,
+  ignoreSelector: '.js-toc-ignore'
+});
+hljs.initHighlightingOnLoad();
+var linkList = document.querySelectorAll('#content a');
+
+for(var i in linkList){
+ linkList[i].setAttribute('target', '_blank');
+ linkList[i].setAttribute('rel', 'noreferrer noopener');
+}
+</script>
+
+
+  <footer class="site-footer">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <small>&copy; 2020 William A. Novak</small>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+  
+</body>
+</html>

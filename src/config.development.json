@@ -1,0 +1,26 @@
+{
+  "url": "https://wanovak.com/",
+  "server": {
+    "port": 2368,
+    "host": "127.0.0.1"
+  },
+  "database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "/Users/will.novak/Dropbox/Briefcase/Blog/ghost-local.db"
+    }
+  },
+  "mail": {
+    "transport": "Direct"
+  },
+  "logging": {
+    "transports": [
+      "file",
+      "stdout"
+    ]
+  },
+  "process": "local",
+  "paths": {
+    "contentPath": "/Users/will.novak/workspace/wanovak/wanovak.github.io/src/content"
+  }
+}
